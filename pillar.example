@@ -14,7 +14,7 @@ proftpd:
     AllowRetrieveRestart: 'on'
     UseReverseDNS: 'off'
     IdentLookups: 'off'
-    ListOpti'on's: "-al"
+    ListOptions: "-al"
     DisplayChdir: '.message'
     # Modules settings
     DelayEngine: 'off'
