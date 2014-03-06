@@ -1,9 +1,8 @@
 ================
-template-formula
+proftpd-formula
 ================
 
-A saltstack formula that is empty. It has dummy content to help with a quick
-start on a new formula.
+A saltstack formula for installing and configuring proftpd.
 
 .. note::
 
@@ -16,7 +15,13 @@ Available states
 .. contents::
     :local:
 
-``template``
+``proftpd``
 ------------
 
-Installs the template package, and starts the associated template service.
+Installs the proftpd package, and starts the associated proftpd service.
+
+``proftpd.database``
+-------------------
+
+Configures database authentication.
+
