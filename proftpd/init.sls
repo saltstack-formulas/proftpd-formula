@@ -13,6 +13,7 @@ proftpd:
 
 {{ proftpd.config }}:
     file.managed:
+        - source: salt://proftpd/files/proftpd.conf
         - user: root
         - group: root
         - mode: 644
