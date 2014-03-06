@@ -1,7 +1,16 @@
-{% set template = salt['grains.filter_by']({
-    'default': {
-        'pkg': 'template',
-        'service': 'template',
-        'config': '/etc/template.conf',
+{% set proftpd = salt['grains.filter_by']({
+    'Ubuntu': {
+        'pkg': 'proftpd',
+        'config': '/etc/proftpd/proftpd.conf',
+        'sql_config': '/etc/proftpd/sql.conf',
+        'mysql': 'proftpd-mod-mysql',
+        'postgresql': 'proftpd-mod-pgsql',
     },
-}, merge=salt['pillar.get']('template:lookup')) %}
+    'Debian': {
+        'pkg': 'proftpd',
+        'config': '/etc/proftpd/proftpd.conf',
+        'sql_config': '/etc/proftpd/sql.conf',
+        'mysql': 'proftpd-mod-mysql',
+        'postgresql': 'proftpd-mod-pgsql',
+    },
+}, merge=salt['pillar.get']('proftpd:lookup')) %}
