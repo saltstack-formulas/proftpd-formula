@@ -47,6 +47,9 @@ proftpd:
             Umask: {{ salt['pillar.get']('proftpd:Umask') }}
             DefaultRoot: {{ salt['pillar.get']('proftpd:DefaultRoot') }}
             DenyFilter: {{ salt['pillar.get']('proftpd:DenyFilter') }}
+            AllowOverwrite: {{ salt['pillar.get']('proftpd:AllowOverwrite') }}
+            HideNoAccess: {{ salt['pillar.get']('proftpd:DenyFilter') }}
+            Limit: {{ salt['pillar.get']('proftpd:Limit') }}
             LogFormatDefault: {{ salt['pillar.get']('proftpd:LogFormat:default') }}
             LogFormatAuth: {{ salt['pillar.get']('proftpd:LogFormat:auth') }}
             LogFormatWrite: {{ salt['pillar.get']('proftpd:LogFormat:write') }}
