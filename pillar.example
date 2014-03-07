@@ -31,6 +31,8 @@ proftpd:
     Umask: '133 022'
     DefaultRoot: '~'
     DenyFilter: '\*.*/'
+    AllowOverwrite: 'on'
+    HideNoAccess: 'on'
     Limit: 'READ WRITE STOR CWD MKD RMD DELE XRMD XMKD RNFR POST_CMD'
     Path:
         Allow: '"^[a-zA-Z0-9 _.-]()'+$"'
