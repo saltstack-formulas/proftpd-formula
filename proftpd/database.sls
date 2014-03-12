@@ -39,3 +39,13 @@
             SQLLogPASS: {{ salt['pillar.get']('proftpd:SQL:SQLLog:PASS') }}
             SQLLogRETR: {{ salt['pillar.get']('proftpd:SQL:SQLLog:RETR') }}
             SQLLogSTOR: {{ salt['pillar.get']('proftpd:SQL:SQLLog:STOR') }}
+
+{{ proftpd.modules }}:
+  file.append:
+    - text:
+        - LoadModule mod_sql.c
+{% if salt['pillar.get']('proftpd:SQL:SQLBackend') == 'mysql' %}        
+        - LoadModule mod_sql_mysql.c
+{% elif salt['pillar.get']('proftpd:SQL:SQLBackend') == 'postgres' %}        
+        - LoadModule mod_sql_postgres.c
+{% endif %}
