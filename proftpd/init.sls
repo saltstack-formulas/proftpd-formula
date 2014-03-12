@@ -60,3 +60,5 @@ proftpd:
             ExtendedLogAccess: {{ salt['pillar.get']('proftpd:ExtendedLog:Access') }}
             ExtendedLogAuth: {{ salt['pillar.get']('proftpd:ExtendedLog:Auth') }}
             ExtendedLogAll: {{ salt['pillar.get']('proftpd:ExtendedLog:All') }}
+            ClamAV: {{ salt['pillar.get']('proftpd:ExtendedLog:ClamAV') }}
+            ClamLocalSocket: {{ salt['pillar.get']('proftpd:ExtendedLog:ClamLocalSocket') }}
