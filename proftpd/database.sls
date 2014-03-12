@@ -33,9 +33,9 @@
             SQLUserWhereClause: {{ salt['pillar.get']('proftpd:SQL:SQLUserWhereClause') }}
             SQLMinID: {{ salt['pillar.get']('proftpd:SQL:SQLMinID') }}
             SQLMinUserGID: {{ salt['pillar.get']('proftpd:SQL:SQLMinUserGID') }}
-            SQLNamedQuerylogin: {{ salt['pillar.get']('proftpd:SQL:SQLNamedQuerylogin') }}
-            SQLNamedQuerydownload: {{ salt['pillar.get']('proftpd:SQL:SQLNamedQuerydownload') }}
-            SQLNamedQueryupload: {{ salt['pillar.get']('proftpd:SQL:SQLNamedQueryupload') }}
-            SQLLogPASS: {{ salt['pillar.get']('proftpd:SQL:SQLLogPASS') }}
-            SQLLogRETR: {{ salt['pillar.get']('proftpd:SQL:SQLLogRETR') }}
-            SQLLogSTOR: {{ salt['pillar.get']('proftpd:SQL:SQLLogSTOR') }}
+            SQLNamedQuerylogin: {{ salt['pillar.get']('proftpd:SQL:SQLNamedQuery:login') }}
+            SQLNamedQuerydownload: {{ salt['pillar.get']('proftpd:SQL:SQLNamedQuery:download') }}
+            SQLNamedQueryupload: {{ salt['pillar.get']('proftpd:SQL:SQLNamedQuery:upload') }}
+            SQLLogPASS: {{ salt['pillar.get']('proftpd:SQL:SQLLog:PASS') }}
+            SQLLogRETR: {{ salt['pillar.get']('proftpd:SQL:SQLLog:RETR') }}
+            SQLLogSTOR: {{ salt['pillar.get']('proftpd:SQL:SQLLog:STOR') }}
