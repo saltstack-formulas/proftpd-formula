@@ -1,8 +1,8 @@
 {% from "proftpd/map.jinja" import proftpd with context %}
 
-{% if salt['pillar.get']('proftpd:SQLBackend') == 'mysql' %}
+{% if salt['pillar.get']('proftpd:SQL:SQLBackend') == 'mysql' %}
 {{ proftpd.mysql }}:
-{% elif salt['pillar.get']('proftpd:SQLBackend') == 'postgres' %}
+{% elif salt['pillar.get']('proftpd:SQL:SQLBackend') == 'postgres' %}
 {{ proftpd.postgres }}:
 {% endif %}
   pkg:
@@ -21,21 +21,21 @@
         - mode: 644
         - template: jinja
         - defaults:
-            SQLBackend: {{ salt['pillar.get']('proftpd:SQLBackend') }}
-            SQLLogFile: {{ salt['pillar.get']('proftpd:SQLLogFile') }}
-            SQLEngine: {{ salt['pillar.get']('proftpd:SQLEngine') }}
-            SQLAuthenticate: {{ salt['pillar.get']('proftpd:SQLAuthenticate') }}
-            SQLAuthTypes: {{ salt['pillar.get']('proftpd:SQLAuthTypes') }}
-            AuthOrder: {{ salt['pillar.get']('proftpd:AuthOrder') }}
-            SQLConnectInfo: {{ salt['pillar.get']('proftpd:SQLConnectInfo') }}
-            SQLUserInfo: {{ salt['pillar.get']('proftpd:SQLUserInfo') }}
-            SQLGroupInfo: {{ salt['pillar.get']('proftpd:SQLGroupInfo') }}
-            SQLUserWhereClause: {{ salt['pillar.get']('proftpd:SQLUserWhereClause') }}
-            SQLMinID: {{ salt['pillar.get']('proftpd:SQLMinID') }}
-            SQLMinUserGID: {{ salt['pillar.get']('proftpd:SQLMinUserGID') }}
-            SQLNamedQuerylogin: {{ salt['pillar.get']('proftpd:SQLNamedQuerylogin') }}
-            SQLNamedQuerydownload: {{ salt['pillar.get']('proftpd:SQLNamedQuerydownload') }}
-            SQLNamedQueryupload: {{ salt['pillar.get']('proftpd:SQLNamedQueryupload') }}
-            SQLLogPASS: {{ salt['pillar.get']('proftpd:SQLLogPASS') }}
-            SQLLogRETR: {{ salt['pillar.get']('proftpd:SQLLogRETR') }}
-            SQLLogSTOR: {{ salt['pillar.get']('proftpd:SQLLogSTOR') }}
+            SQLBackend: {{ salt['pillar.get']('proftpd:SQL:SQLBackend') }}
+            SQLLogFile: {{ salt['pillar.get']('proftpd:SQL:SQLLogFile') }}
+            SQLEngine: {{ salt['pillar.get']('proftpd:SQL:SQLEngine') }}
+            SQLAuthenticate: {{ salt['pillar.get']('proftpd:SQL:SQLAuthenticate') }}
+            SQLAuthTypes: {{ salt['pillar.get']('proftpd:SQL:SQLAuthTypes') }}
+            AuthOrder: {{ salt['pillar.get']('proftpd:SQL:AuthOrder') }}
+            SQLConnectInfo: {{ salt['pillar.get']('proftpd:SQL:SQLConnectInfo') }}
+            SQLUserInfo: {{ salt['pillar.get']('proftpd:SQL:SQLUserInfo') }}
+            SQLGroupInfo: {{ salt['pillar.get']('proftpd:SQL:SQLGroupInfo') }}
+            SQLUserWhereClause: {{ salt['pillar.get']('proftpd:SQL:SQLUserWhereClause') }}
+            SQLMinID: {{ salt['pillar.get']('proftpd:SQL:SQLMinID') }}
+            SQLMinUserGID: {{ salt['pillar.get']('proftpd:SQL:SQLMinUserGID') }}
+            SQLNamedQuerylogin: {{ salt['pillar.get']('proftpd:SQL:SQLNamedQuerylogin') }}
+            SQLNamedQuerydownload: {{ salt['pillar.get']('proftpd:SQL:SQLNamedQuerydownload') }}
+            SQLNamedQueryupload: {{ salt['pillar.get']('proftpd:SQL:SQLNamedQueryupload') }}
+            SQLLogPASS: {{ salt['pillar.get']('proftpd:SQL:SQLLogPASS') }}
+            SQLLogRETR: {{ salt['pillar.get']('proftpd:SQL:SQLLogRETR') }}
+            SQLLogSTOR: {{ salt['pillar.get']('proftpd:SQL:SQLLogSTOR') }}
