@@ -55,9 +55,9 @@ proftpd:
         All: '/var/log/proftpd/all.log ALL'
     SQL:
         # SQL settings
-        SQLLogFile: '/var/log/proftpd/sql.log'
         Include: /etc/proftpd/sql.conf
         SQLBackend: mysql|postgres
+        SQLLogFile: '/var/log/proftpd/sql.log'
         SQLEngine: on
         SQLAuthenticate: on
         SQLAuthTypes: Crypt|Plaintext
