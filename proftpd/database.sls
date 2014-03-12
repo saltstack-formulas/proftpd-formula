@@ -17,8 +17,8 @@
         - mode: 644
         - template: jinja
         - defaults:
-            SQLLogFile: {{ salt['pillar.get']('proftpd:') }}
             SQLBackend: {{ salt['pillar.get']('proftpd:') }}
+            SQLLogFile: {{ salt['pillar.get']('proftpd:') }}
             SQLEngine: {{ salt['pillar.get']('proftpd:') }}
             SQLAuthenticate: {{ salt['pillar.get']('proftpd:') }}
             SQLAuthTypes: {{ salt['pillar.get']('proftpd:') }}
