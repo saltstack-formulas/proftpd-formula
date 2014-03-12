@@ -35,8 +35,8 @@ proftpd:
     HideNoAccess: 'on'
     Limit: 'READ WRITE STOR CWD MKD RMD DELE XRMD XMKD RNFR POST_CMD'
     Path:
-        Allow: '"^[a-zA-Z0-9 _.-]()'+$"'
-        Deny: '"(\.ftp)|(\.ht)[a-z]+$"'
+        Allow: "\"^[a-zA-Z0-9 _.-]()'+$\""
+        Deny: "\"(\\.ftp)|(\\.ht)[a-z]+$\""
     # LOG settings
     # Logging Formats
     LogFormat:
@@ -66,7 +66,7 @@ proftpd:
         SQLConnectInfo: 'username@dbhost username randompassword'
         SQLUserInfo: 'users username password uid gid homedir shell'
         SQLGroupInfo: 'groups groupname gid members'
-        SQLUserWhereClause: '"login_enabled = 'y'"'
+        SQLUserWhereClause: '"login_enabled = \'y\'"'
         SQLMinID: 999
         SQLMinUserGID: 999
         SQLNamedQuery:
