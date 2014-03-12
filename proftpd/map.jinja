@@ -4,13 +4,13 @@
         'config': '/etc/proftpd/proftpd.conf',
         'sql_config': '/etc/proftpd/sql.conf',
         'mysql': 'proftpd-mod-mysql',
-        'postgresql': 'proftpd-mod-pgsql',
+        'postgres': 'proftpd-mod-pgsql',
     },
     'Debian': {
         'pkg': 'proftpd',
         'config': '/etc/proftpd/proftpd.conf',
         'sql_config': '/etc/proftpd/sql.conf',
         'mysql': 'proftpd-mod-mysql',
-        'postgresql': 'proftpd-mod-pgsql',
+        'postgres': 'proftpd-mod-pgsql',
     },
 }, merge=salt['pillar.get']('proftpd:lookup')) %}

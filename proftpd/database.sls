@@ -1,6 +1,12 @@
 {% from "proftpd/map.jinja" import proftpd with context %}
 
+{% if salt['pillar.get']('proftpd:SQLBackend') %}
+
+{% if salt['pillar.get']('proftpd:SQLBackend') == 'mysql' %}
 {{ proftpd.mysql }}:
+{% elif salt['pillar.get']('proftpd:SQLBackend') == 'postgres' %}
+{{ proftpd.postgres }}:
+{% endif %}
   pkg:
     - installed
 
@@ -35,3 +41,4 @@
             SQLLogPASS: {{ salt['pillar.get']('proftpd:SQLLogPASS') }}
             SQLLogRETR: {{ salt['pillar.get']('proftpd:SQLLogRETR') }}
             SQLLogSTOR: {{ salt['pillar.get']('proftpd:SQLLogSTOR') }}
+{% endif %}
