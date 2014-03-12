@@ -49,7 +49,7 @@ proftpd:
             DenyFilter: {{ salt['pillar.get']('proftpd:DenyFilter') }}
             DirUmask: {{ salt['pillar.get']('proftpd:DirUmask') }}
             DirAllowOverwrite: {{ salt['pillar.get']('proftpd:DirAllowOverwrite') }}
-            DirHideNoAccess: {{ salt['pillar.get']('proftpd:DirDenyFilter') }}
+            DirHideNoAccess: {{ salt['pillar.get']('proftpd:DirHideNoAccess') }}
             DirLimit: {{ salt['pillar.get']('proftpd:DirLimit') }}
             PathAllowFilter: {{ salt['pillar.get']('proftpd:PathAllowFilter') }}            
             PathDenyFilter: {{ salt['pillar.get']('proftpd:PathDenyFilter') }}
