@@ -66,13 +66,13 @@ proftpd:
         SQLConnectInfo: 'username@dbhost username randompassword'
         SQLUserInfo: 'users username password uid gid homedir shell'
         SQLGroupInfo: 'groups groupname gid members'
-        SQLUserWhereClause: '"login_enabled = \'y\'"'
+        SQLUserWhereClause: "login_enabled = ''y''"
         SQLMinID: 999
         SQLMinUserGID: 999
         SQLNamedQuery:
-            login: 'login UPDATE "last_login=now(), login_count=login_count+1 WHERE username='%u'" users'
-            download: 'download UPDATE "down_count=down_count+1, down_bytes=down_bytes+%b WHERE username='%u'" users'
-            upload: 'upload UPDATE "up_count=up_count+1, up_bytes=up_bytes+%b WHERE username='%u'" users'
+            login: 'login UPDATE "last_login=now(), login_count=login_count+1 WHERE username=''%u''" users'
+            download: 'download UPDATE "down_count=down_count+1, down_bytes=down_bytes+%b WHERE username=''%u''" users'
+            upload: 'upload UPDATE "up_count=up_count+1, up_bytes=up_bytes+%b WHERE username=''%u''" users'
         SQLLog:
             PASS: 'PASS login'
             RETR: 'RETR download'
