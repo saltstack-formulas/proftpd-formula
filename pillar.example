@@ -35,9 +35,8 @@ proftpd:
     DirAllowOverwrite: 'on'
     DirHideNoAccess: 'on'
     DirLimit: 'READ WRITE STOR CWD MKD RMD DELE XRMD XMKD RNFR POST_CMD'
-    Path:
-        Allow: "\"^[a-zA-Z0-9 _.-]()'+$\""
-        Deny: "\"(\\.ftp)|(\\.ht)[a-z]+$\""
+    PathAllowFilter: "\"^[a-zA-Z0-9 _.-]()'+$\""
+    PathDenyFilter: "\"(\\.ftp)|(\\.ht)[a-z]+$\""
     # LOG settings
     # Logging Formats
     LogFormat:

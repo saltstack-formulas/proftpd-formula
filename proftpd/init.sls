@@ -51,6 +51,8 @@ proftpd:
             DirAllowOverwrite: {{ salt['pillar.get']('proftpd:DirAllowOverwrite') }}
             DirHideNoAccess: {{ salt['pillar.get']('proftpd:DirDenyFilter') }}
             DirLimit: {{ salt['pillar.get']('proftpd:DirLimit') }}
+            PathAllowFilter: {{ salt['pillar.get']('proftpd:PathAllowFilter') }}            
+            PathDenyFilter: {{ salt['pillar.get']('proftpd:PathDenyFilter') }}
             LogFormatDefault: {{ salt['pillar.get']('proftpd:LogFormat:default') }}
             LogFormatAuth: {{ salt['pillar.get']('proftpd:LogFormat:auth') }}
             LogFormatWrite: {{ salt['pillar.get']('proftpd:LogFormat:write') }}
