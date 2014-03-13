@@ -21,7 +21,7 @@ proftpd:
         - defaults:
             ServerName: {{ salt['pillar.get']('proftpd:ServerName') }}
             ServerType: {{ salt['pillar.get']('proftpd:ServerType') }}
-            ServerIdent: {{ salt['pillar.get']('proftpd:ServerIdent', 'off') }}
+            ServerIdent: {{ salt['pillar.get']('proftpd:ServerIdent', '"off"') }}
             DefaultServer: {{ salt['pillar.get']('proftpd:DefaultServer') }}
             Port: {{ salt['pillar.get']('proftpd:Port', 21) }}
             MaxInstances: {{ salt['pillar.get']('proftpd:MaxInstances') }}
@@ -60,5 +60,5 @@ proftpd:
             ExtendedLogAccess: {{ salt['pillar.get']('proftpd:ExtendedLog:Access') }}
             ExtendedLogAuth: {{ salt['pillar.get']('proftpd:ExtendedLog:Auth') }}
             ExtendedLogAll: {{ salt['pillar.get']('proftpd:ExtendedLog:All') }}
-            ClamAV: {{ salt['pillar.get']('proftpd:ExtendedLog:ClamAV') }}
-            ClamLocalSocket: {{ salt['pillar.get']('proftpd:ExtendedLog:ClamLocalSocket') }}
+            ClamAV: {{ salt['pillar.get']('proftpd:ClamAV') }}
+            ClamLocalSocket: {{ salt['pillar.get']('proftpd:ClamLocalSocket') }}
