@@ -1,42 +1,42 @@
 proftpd:
     ServerName: "My FTP Server"
     ServerType: standalone
-    ServerIdent: 'off'
-    DefaultServer: 'on'
+    ServerIdent: '"off"'
+    DefaultServer: '"on"'
     Port: 21
     MaxInstances: 50
     # General settings
-    DeferWelcome: 'on'
-    MultilineRFC2228: 'on'
-    ShowSymlinks: 'on'
-    AllowOverwrite: 'on'
-    AllowStoreRestart: 'on'
-    AllowRetrieveRestart: 'on'
-    UseReverseDNS: 'off'
-    IdentLookups: 'off'
+    DeferWelcome: '"on"'
+    MultilineRFC2228: '"on"'
+    ShowSymlinks: '"on"'
+    AllowOverwrite: '"on"'
+    AllowStoreRestart: '"on"'
+    AllowRetrieveRestart: '"on"'
+    UseReverseDNS: '"off"'
+    IdentLookups: '"off"'
     ListOptions: "-al"
     DisplayChdir: '.message'
     # Modules settings
-    DelayEngine: 'off'
+    DelayEngine: '"off"'
     # Timeout settings
     TimeoutLogin: 240
     TimeoutNoTransfer: 1200
     TimeoutStalled: 1200
     TimeoutIdle: 1200
     # Security settings
-    RootLogin: 'off'
-    RequireValidShell: 'off'
+    RootLogin: '"off"'
+    RequireValidShell: '"off"'
     User: nobody
     Group: nogroup
     Umask: '133 022'
     DefaultRoot: '~'
     DenyFilter: '\*.*/'
     DirUmask: '022'
-    DirAllowOverwrite: 'on'
-    DirHideNoAccess: 'on'
+    DirAllowOverwrite: '"on"'
+    DirHideNoAccess: '"on"'
     DirLimit: 'READ WRITE STOR CWD MKD RMD DELE XRMD XMKD RNFR POST_CMD'
-    PathAllowFilter: "\"^[a-zA-Z0-9 _.-]()'+$\""
-    PathDenyFilter: "\"(\\.ftp)|(\\.ht)[a-z]+$\""
+    PathAllowFilter: '"^[a-zA-Z0-9_.-]()''+$"'
+    PathDenyFilter: "'(\\.ftp)|(\\.ht)[a-z]+$'"
     # LOG settings
     # Logging Formats
     LogFormat:
@@ -66,7 +66,7 @@ proftpd:
         SQLConnectInfo: 'username@dbhost username randompassword'
         SQLUserInfo: 'users username password uid gid homedir shell'
         SQLGroupInfo: 'groups groupname gid members'
-        SQLUserWhereClause: "login_enabled = ''y''"
+        SQLUserWhereClause: '"\"login_enabled = ''y''\""'
         SQLMinID: 999
         SQLMinUserGID: 999
         SQLNamedQuery:
@@ -79,7 +79,7 @@ proftpd:
             STOR: 'STOR upload'
 
     # Enable virus scanning and removal
-    ClamAV: 'on'
+    ClamAV: '"on"'
     # Specify the UNIX Local Socket
     ClamLocalSocket: /var/run/clamav/clamd.sock
 
