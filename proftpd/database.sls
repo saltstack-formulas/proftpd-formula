@@ -44,8 +44,4 @@
   file.append:
     - text:
         - LoadModule mod_sql.c
-{% if salt['pillar.get']('proftpd:SQL:SQLBackend') == 'mysql' %}        
-        - LoadModule mod_sql_mysql.c
-{% elif salt['pillar.get']('proftpd:SQL:SQLBackend') == 'postgres' %}        
-        - LoadModule mod_sql_postgres.c
-{% endif %}
+        - LoadModule mod_sql_{{ salt['pillar.get']('proftpd:SQL:SQLBackend') }}.c
