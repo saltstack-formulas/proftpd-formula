@@ -1,11 +1,9 @@
 {% from "proftpd/map.jinja" import proftpd with context %}
 
 proftpd:
-  pkg:
-    - installed
+  pkg.installed:
     - name: {{ proftpd.pkg }}
-  service:
-    - running
+  service.running:
     - name: {{ proftpd.service }}
     - enable: True
     - watch:
