@@ -17,4 +17,14 @@
         'postgres': 'proftpd-mod-pgsql',
         'service': 'proftpd',
     },
+    'RedHat': {
+        'pkg': 'proftpd',
+        'config': '/etc/proftpd.conf',
+        'service': 'proftpd',
+    },
+    'Suse': {
+        'pkg': 'proftpd',
+        'config': '/etc/proftpd/proftpd.conf',
+        'service': 'proftpd',
+    },
 }, merge=salt['pillar.get']('proftpd:lookup')) %}

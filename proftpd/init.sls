@@ -17,6 +17,7 @@ proftpd:
         - mode: 644
         - template: jinja
         - defaults:
+            modules_config: {{ salt['pillar.get']('proftpd:modules_config') }}
             ServerName: {{ salt['pillar.get']('proftpd:ServerName') }}
             ServerType: {{ salt['pillar.get']('proftpd:ServerType') }}
             ServerIdent: {{ salt['pillar.get']('proftpd:ServerIdent', '"off"') }}
@@ -49,7 +50,7 @@ proftpd:
             DirAllowOverwrite: {{ salt['pillar.get']('proftpd:DirAllowOverwrite') }}
             DirHideNoAccess: {{ salt['pillar.get']('proftpd:DirHideNoAccess') }}
             DirLimit: {{ salt['pillar.get']('proftpd:DirLimit') }}
-            PathAllowFilter: {{ salt['pillar.get']('proftpd:PathAllowFilter') }}            
+            PathAllowFilter: {{ salt['pillar.get']('proftpd:PathAllowFilter') }}
             PathDenyFilter: {{ salt['pillar.get']('proftpd:PathDenyFilter') }}
             LogFormatDefault: {{ salt['pillar.get']('proftpd:LogFormat:default') }}
             LogFormatAuth: {{ salt['pillar.get']('proftpd:LogFormat:auth') }}
