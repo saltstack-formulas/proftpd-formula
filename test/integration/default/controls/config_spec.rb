@@ -3,7 +3,6 @@
 control 'Proftpd configuration' do
   title 'should match desired lines'
 
-
   config_file =
     case platform[:family]
     when 'debian', 'suse'
@@ -31,9 +30,11 @@ control 'Proftpd configuration' do
     end
 
   describe file(config_file) do
+    # rubocop:disable Layout/LineLength
     its('content') { should include 'ServerName                              SaltStack FTP Server' }
     its('content') { should include 'ServerType                              standalone' }
     its('content') { should include "User                                    #{config_user}" }
     its('content') { should include "Group                                   #{config_group}" }
+    # rubocop:enable Layout/LineLength
   end
 end
