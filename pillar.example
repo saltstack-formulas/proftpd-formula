@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
 proftpd:
     ServerName: "My FTP Server"
     ServerType: standalone
@@ -48,20 +51,20 @@ proftpd:
     # all logins
     ExtendedLog:
         Auth: '/var/log/proftpd/auth.log AUTH auth'
-    # file/dir access
+        # file/dir access
         Access: '/var/log/proftpd/access.log WRITE,READ write'
-    # everything (be careful, generates_ very_ big logfiles)
-    # ExtendedLog /var/log/proftpd/proftpd-all.log ALL default
+        # everything (be careful, generates_ very_ big logfiles)
+        # ExtendedLog /var/log/proftpd/proftpd-all.log ALL default
         All: '/var/log/proftpd/all.log ALL'
     SQL:
         # SQL settings
         Include: /etc/proftpd/sql.conf
         SQLBackend: mysql|postgres
         SQLLogFile: '/var/log/proftpd/sql.log'
-        SQLEngine: on
-        SQLAuthenticate: on
+        SQLEngine: 'on'
+        SQLAuthenticate: 'on'
         SQLAuthTypes: Crypt|Plaintext
-        #SQLAuthenticate users* groups*
+        # SQLAuthenticate users* groups*
         AuthOrder: 'mod_sql.c'
         SQLConnectInfo: 'username@dbhost username randompassword'
         SQLUserInfo: 'users username password uid gid homedir shell'
@@ -70,9 +73,11 @@ proftpd:
         SQLMinID: 999
         SQLMinUserGID: 999
         SQLNamedQuery:
+            # yamllint disable rule:line-length
             login: 'login UPDATE "last_login=now(), login_count=login_count+1 WHERE username=''%u''" users'
             download: 'download UPDATE "down_count=down_count+1, down_bytes=down_bytes+%b WHERE username=''%u''" users'
             upload: 'upload UPDATE "up_count=up_count+1, up_bytes=up_bytes+%b WHERE username=''%u''" users'
+            # yamllint enable rule:line-length
         SQLLog:
             PASS: 'PASS login'
             RETR: 'RETR download'
@@ -82,4 +87,3 @@ proftpd:
     ClamAV: '"on"'
     # Specify the UNIX Local Socket
     ClamLocalSocket: /var/run/clamav/clamd.sock
-
