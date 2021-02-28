@@ -27,4 +27,9 @@
         'config': '/etc/proftpd/proftpd.conf',
         'service': 'proftpd',
     },
+    'Gentoo': {
+        'pkg': 'net-ftp/proftpd',
+        'config': '/etc/proftpd/proftpd.conf',
+        'service': 'proftpd',
+    },
 }, merge=salt['pillar.get']('proftpd:lookup')) %}

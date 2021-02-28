@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
+# NOTE: Use of `linux` for `platform[:family]` refers to Gentoo only,
+#       since Arch Linux is not supported yet (AUR package available only)
 control 'Proftpd configuration' do
   title 'should match desired lines'
 
   config_file =
     case platform[:family]
-    when 'debian', 'suse'
+    when 'debian', 'suse', 'linux'
       '/etc/proftpd/proftpd.conf'
     when 'redhat', 'fedora'
       '/etc/proftpd.conf'
@@ -13,7 +15,7 @@ control 'Proftpd configuration' do
 
   config_user =
     case platform[:family]
-    when 'debian', 'redhat', 'fedora'
+    when 'debian', 'redhat', 'fedora', 'linux'
       'nobody'
     when 'suse'
       'ftp'
@@ -21,7 +23,7 @@ control 'Proftpd configuration' do
 
   config_group =
     case platform[:family]
-    when 'debian'
+    when 'debian', 'linux'
       'nogroup'
     when 'redhat', 'fedora'
       'nobody'
