@@ -344,6 +344,7 @@ suites:
       state_top:
         base:
           '*':
+            - proftpd._mapdata
             - proftpd
       pillars:
         top.sls:
@@ -389,6 +390,7 @@ suites:
       state_top:
         base:
           '*':
+            - proftpd._mapdata
             - proftpd
       pillars:
         top.sls:
@@ -415,6 +417,7 @@ suites:
       state_top:
         base:
           '*':
+            - proftpd._mapdata
             - proftpd
       pillars:
         top.sls:
@@ -443,6 +446,7 @@ suites:
       state_top:
         base:
           '*':
+            - proftpd._mapdata
             - epel
             - proftpd
       pillars:
@@ -471,6 +475,7 @@ suites:
       state_top:
         base:
           '*':
+            - proftpd._mapdata
             - proftpd
       pillars:
         top.sls:
