@@ -18,6 +18,7 @@ ignore: |
   test/**/states/**/*.sls
   .kitchen/
   kitchen.vagrant.yml
+  test/salt/pillar/debian.sls
   test/salt/pillar/redhat.sls
 
 yaml-files:
