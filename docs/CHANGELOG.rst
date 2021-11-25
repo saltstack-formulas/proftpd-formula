@@ -2,6 +2,30 @@
 Changelog
 =========
 
+`0.5.1 <https://github.com/saltstack-formulas/proftpd-formula/compare/v0.5.0...v0.5.1>`_ (2021-11-25)
+---------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* use ``pillars_from_directories`` & ``test/salt/pillar/top.sls`` (\ `c26bd1e <https://github.com/saltstack-formulas/proftpd-formula/commit/c26bd1edd6b4e1c296034d4e31339349e3510075>`_\ )
+* **3003.1:** update inc. AlmaLinux, Rocky & ``rst-lint`` [skip ci] (\ `0f28f28 <https://github.com/saltstack-formulas/proftpd-formula/commit/0f28f28885c235294a952d1e1703925ca8121891>`_\ )
+* **gemfile+lock:** use ``ssf`` customised ``inspec`` repo [skip ci] (\ `16f3f8a <https://github.com/saltstack-formulas/proftpd-formula/commit/16f3f8a0d0f9c082caa2d241339b1d48970d422d>`_\ )
+* **kitchen:** move ``provisioner`` block & update ``run_command`` [skip ci] (\ `f0adb77 <https://github.com/saltstack-formulas/proftpd-formula/commit/f0adb77b9f569f9d0d20e5dcc2aa2a37c5e4975e>`_\ )
+* **kitchen+ci:** update with ``3004`` pre-salted images/boxes [skip ci] (\ `cce6a7e <https://github.com/saltstack-formulas/proftpd-formula/commit/cce6a7eb533fa108d3798f9b96e2a796f291ad19>`_\ )
+* **kitchen+ci:** update with latest ``3003.2`` pre-salted images [skip ci] (\ `78a2131 <https://github.com/saltstack-formulas/proftpd-formula/commit/78a21313484cbda164ad75a89c7d70914c16bf98>`_\ )
+* **kitchen+ci:** update with latest CVE pre-salted images [skip ci] (\ `cfe78ba <https://github.com/saltstack-formulas/proftpd-formula/commit/cfe78ba10ab7ca5581ec81cfe98d9524fc29a242>`_\ )
+* add ``arch-master`` to matrix and update ``.travis.yml`` [skip ci] (\ `2b72018 <https://github.com/saltstack-formulas/proftpd-formula/commit/2b7201878a339e2c951555ee65e075f70fca105c>`_\ )
+* add Debian 11 Bullseye & update ``yamllint`` configuration [skip ci] (\ `6870dfd <https://github.com/saltstack-formulas/proftpd-formula/commit/6870dfdd68f69a481e67316823fb2eceee0b4885>`_\ )
+* **kitchen+gitlab:** remove Ubuntu 16.04 & Fedora 32 (EOL) [skip ci] (\ `f8e464d <https://github.com/saltstack-formulas/proftpd-formula/commit/f8e464d5b84480eeb18af2cb103f3e7909452440>`_\ )
+
+Tests
+^^^^^
+
+
+* **pillar/debian:** disable ``IdentLookups`` for ``Debian-11`` [skip ci] (\ `ce6dec8 <https://github.com/saltstack-formulas/proftpd-formula/commit/ce6dec830f4e960b8ef3da3ff08cecb71c846abc>`_\ )
+
 `0.5.0 <https://github.com/saltstack-formulas/proftpd-formula/compare/v0.4.0...v0.5.0>`_ (2021-05-04)
 ---------------------------------------------------------------------------------------------------------
 
