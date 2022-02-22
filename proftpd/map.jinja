@@ -1,4 +1,6 @@
-{% set proftpd = salt['grains.filter_by']({
+{% import_yaml "proftpd/defaults.yaml" as default_settings %}
+
+{% set os_family_map = salt['grains.filter_by']({
     'Ubuntu': {
         'pkg': 'proftpd-basic',
         'config': '/etc/proftpd/proftpd.conf',
@@ -20,16 +22,26 @@
     'RedHat': {
         'pkg': 'proftpd',
         'config': '/etc/proftpd.conf',
+        'modules_config': '/etc/proftpd/modules.conf',
         'service': 'proftpd',
     },
     'Suse': {
         'pkg': 'proftpd',
         'config': '/etc/proftpd/proftpd.conf',
+        'modules_config': '/etc/proftpd/modules.conf',
         'service': 'proftpd',
     },
     'Gentoo': {
         'pkg': 'net-ftp/proftpd',
         'config': '/etc/proftpd/proftpd.conf',
+        'modules_config': '/etc/proftpd/modules.conf',
         'service': 'proftpd',
     },
-}, merge=salt['pillar.get']('proftpd:lookup')) %}
+    }, merge=salt['pillar.get']('proftpd:lookup'))
+%}
+
+{# Merge the flavor_map to the default settings #}
+{% do default_settings.proftpd.update(os_family_map) %}
+
+{# Merge in proftpd:lookup pillar #}
+{% set proftpd = salt['pillar.get']('proftpd', default=default_settings.proftpd, merge=True) %}
