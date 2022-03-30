@@ -9,6 +9,19 @@ proftpd:
     - watch:
         - file: {{ proftpd.config }}
 
+{% if salt['pillar.get']('proftpd:Modules') %}
+{{ proftpd.modules_config }}:
+    file.managed:
+        - source: salt://proftpd/files/modules.conf
+        - user: root
+        - group: root
+        - mode: 644
+        - makedirs: True
+        - template: jinja
+        - context:
+          Modules: {{ proftpd.Modules }}
+{% endif  %}
+
 {{ proftpd.config }}:
     file.managed:
         - source: salt://proftpd/files/proftpd.conf

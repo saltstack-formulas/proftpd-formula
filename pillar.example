@@ -87,3 +87,9 @@ proftpd:
     ClamAV: '"on"'
     # Specify the UNIX Local Socket
     ClamLocalSocket: /var/run/clamav/clamd.sock
+    # Any pillar in Modules will cause the formula to manage Proftpd modules.conf
+    # Modules:
+    #   Enable or disable any module with true or false
+    #   Default list of activated modules is visible in defaults.yaml
+    #   mod_ctrls_admin: true
+    #   mod_radius: false
