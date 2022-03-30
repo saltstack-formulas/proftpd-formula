@@ -1,5 +1,29 @@
 # Changelog
 
+# [0.6.0](https://github.com/saltstack-formulas/proftpd-formula/compare/v0.5.1...v0.6.0) (2022-03-30)
+
+
+### Bug Fixes
+
+* **pillar/default:** fix `yamllint` violations [skip ci] ([251155e](https://github.com/saltstack-formulas/proftpd-formula/commit/251155ebea0115cef8152f82f253a7cfe15c41a1))
+
+
+### Continuous Integration
+
+* update linters to latest versions [skip ci] ([ba07dbc](https://github.com/saltstack-formulas/proftpd-formula/commit/ba07dbca406a210f78d53ef7b1e3a06fadbdb91d))
+* **gemfile:** allow rubygems proxy to be provided as an env var [skip ci] ([b8642ed](https://github.com/saltstack-formulas/proftpd-formula/commit/b8642ed28eee31719dcca8485fbf814a327c79b0))
+* **kitchen+gitlab:** update for new pre-salted images [skip ci] ([112270b](https://github.com/saltstack-formulas/proftpd-formula/commit/112270b5eede9168a745aceb1383149a0ce727a3))
+
+
+### Features
+
+* **contributing:** add modules.conf management ([74ad102](https://github.com/saltstack-formulas/proftpd-formula/commit/74ad1027921db9951f012079b8e30ebb3572609d))
+
+
+### Tests
+
+* **system:** add `build_platform_codename` [skip ci] ([925b583](https://github.com/saltstack-formulas/proftpd-formula/commit/925b583aed6af8043a11e0584dd39f8d5d33e708))
+
 ## [0.5.1](https://github.com/saltstack-formulas/proftpd-formula/compare/v0.5.0...v0.5.1) (2021-11-25)
 
 
