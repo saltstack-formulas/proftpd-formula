@@ -67,5 +67,5 @@ proftpd:
   # Specify the UNIX Local Socket
   ClamLocalSocket: /var/run/clamav/clamd.sock
   Modules:
-    mod_radius: False
-    mod_ident: True
+    mod_radius: false
+    mod_ident: true
