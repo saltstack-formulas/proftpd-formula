@@ -3,24 +3,27 @@
 ---
 proftpd:
   Modules:
-    mod_ctrls_admin: true
-    mod_radius: true
-    mod_quotatab: true
-    mod_quotatab_file: true
-    mod_quotatab_radius: true
-    mod_load: true
-    mod_ban: true
-    mod_wrap2: true
-    mod_wrap2_file: true
-    mod_dynmasq: true
-    mod_exec: true
-    mod_shaper: true
-    mod_ratio: true
-    mod_site_misc: true
-    mod_facl: true
-    mod_unique_id: true
-    mod_copy: true
-    mod_deflate: true
-    mod_ifversion: true
-    mod_readme: true
-    mod_ifsession: true
+    enabled:
+      - mod_ctrls_admin
+      - mod_radius
+      - mod_quotatab
+      - mod_quotatab_file
+      - mod_quotatab_radius
+      - mod_load
+      - mod_ban
+      - mod_wrap2
+      - mod_wrap2_file
+      - mod_dynmasq
+      - mod_exec
+      - mod_shaper
+      - mod_ratio
+      - mod_site_misc
+      - mod_facl
+      - mod_unique_id
+      - mod_copy
+      - mod_deflate
+      - mod_ifversion
+      - mod_readme
+      - mod_ifsession
+    disabled:
+      - mod_sftp

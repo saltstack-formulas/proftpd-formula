@@ -9,5 +9,6 @@ control 'Module configuration' do
     its('content') { should include 'mod_ident' }
     its('content') { should include 'mod_ctrls_admin' }
     its('content') { should_not include 'mod_radius' }
+    its('content') { should match(/mod_quotatab.c\nLoadModule mod_quotatab_file/) }
   end
 end

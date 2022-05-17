@@ -82,14 +82,16 @@ proftpd:
             PASS: 'PASS login'
             RETR: 'RETR download'
             STOR: 'STOR upload'
-
     # Enable virus scanning and removal
     ClamAV: '"on"'
     # Specify the UNIX Local Socket
     ClamLocalSocket: /var/run/clamav/clamd.sock
-    # Any pillar in Modules will cause the formula to manage Proftpd modules.conf
+    # Any pillar in Modules will cause the formula to manage proftpd modules.conf
+    # No pillars will result in the use of the default file of the package
     # Modules:
-    #   Enable or disable any module with true or false
+    #   enabled:
+    #     - mod_ctrls_admin
+    #   disabled:
+    #     - mod_radius
+    #   Enable or disable any module with the right list
     #   Default list of activated modules is visible in defaults.yaml
-    #   mod_ctrls_admin: true
-    #   mod_radius: false

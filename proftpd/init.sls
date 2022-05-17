@@ -19,7 +19,13 @@ proftpd:
         - makedirs: True
         - template: jinja
         - context:
-          Modules: {{ proftpd.Modules }}
+            Modules: {{ proftpd.Modules.enabled }}
+
+proftpd_modules_service_restart:
+  service.running:
+    - name: proftpd
+    - watch:
+      - file: {{ proftpd.modules_config }}
 {% endif  %}
 
 {{ proftpd.config }}:
