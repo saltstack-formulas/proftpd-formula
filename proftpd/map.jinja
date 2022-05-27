@@ -1,6 +1,4 @@
-{% import_yaml "proftpd/defaults.yaml" as default_settings %}
-
-{% set os_family_map = salt['grains.filter_by']({
+{% set proftpd = salt['grains.filter_by']({
     'Ubuntu': {
         'pkg': 'proftpd-basic',
         'config': '/etc/proftpd/proftpd.conf',
@@ -39,20 +37,3 @@
     },
     }, merge=salt['pillar.get']('proftpd:lookup'))
 %}
-
-{# Merge the flavor_map to the default settings #}
-{% do default_settings.proftpd.update(os_family_map) %}
-
-{# Merge in proftpd:lookup pillar #}
-{% set proftpd = salt['pillar.get']('proftpd', default=default_settings.proftpd, merge=True, merge_nested_lists=True) %}
-{% set proftpd_pillar = salt['pillar.get']('proftpd', default=[], merge=True) %}
-{% for mod in proftpd_pillar.Modules.enabled %}
-{%   if mod in proftpd.Modules.disabled %}
-{%     do proftpd.Modules.disabled.remove(mod) %}
-{%   endif %}
-{% endfor %}
-{% for mod in proftpd_pillar.Modules.disabled %}
-{%   if mod in proftpd.Modules.enabled %}
-{%     do proftpd.Modules.enabled.remove(mod) %}
-{%   endif %}
-{% endfor %}

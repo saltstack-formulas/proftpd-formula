@@ -19,7 +19,7 @@ proftpd:
         - makedirs: True
         - template: jinja
         - context:
-            Modules: {{ proftpd.Modules.enabled }}
+            Modules: {{ salt['pillar.get']('proftpd:Modules') }}
 
 proftpd_modules_service_restart:
   service.running:
