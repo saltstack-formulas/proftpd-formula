@@ -1,7 +1,6 @@
 ---
 proftpd:
   Modules:
-    enabled:
-      - mod_sftp
+    - mod_sftp
   SFTP:
     Port: 4000

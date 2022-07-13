@@ -1,6 +1,8 @@
 {% from "proftpd/map.jinja" import proftpd with context %}
 
-{% if not salt['pillar.get']('proftpd:Modules:mod_sftp') %}
+{% set SFTP = proftpd.get('SFTP', {}) %}
+
+{% if not 'mod_sftp' in salt['pillar.get']('proftpd:Modules', []) %}
 missing_sftp_require_pillar:
   test.fail_without_changes
 {% endif %}
@@ -17,7 +19,7 @@ proftpd_sftp_config_file:
     - template: jinja
     - context:
       sftp_config: {{ proftpd.sftp_config }}
-      sftp: {{ proftpd.SFTP }}
+      sftp: {{ SFTP }}
 
 proftpd_sftp_service_restart:
   service.running:
