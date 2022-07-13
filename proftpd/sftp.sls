@@ -18,8 +18,8 @@ proftpd_sftp_config_file:
     - show_changes: true
     - template: jinja
     - context:
-      sftp_config: {{ proftpd.sftp_config }}
-      sftp: {{ SFTP }}
+  #      sftp_config: {{ proftpd.sftp_config }}
+        sftp: {{ SFTP }}
 
 proftpd_sftp_service_restart:
   service.running:

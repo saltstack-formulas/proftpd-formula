@@ -81,3 +81,4 @@ proftpd_modules_service_restart:
       ExtendedLogAll: {{ salt['pillar.get']('proftpd:ExtendedLog:All') }}
       ClamAV: {{ salt['pillar.get']('proftpd:ClamAV') }}
       ClamLocalSocket: {{ salt['pillar.get']('proftpd:ClamLocalSocket') }}
+      sftp: {{ salt['pillar.get']('proftpd:SFTP', False) }}
