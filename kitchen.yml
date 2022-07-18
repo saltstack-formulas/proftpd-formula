@@ -22,8 +22,6 @@ provisioner:
   salt_copy_filter:
     - .kitchen
     - .git
-  pillars_from_directories:
-    - test/salt/pillar
 
 platforms:
   ## SALT `tiamat`
@@ -276,6 +274,8 @@ verifier:
 suites:
   - name: default
     provisioner:
+      pillars_from_directories:
+        - test/salt/pillar/default
       dependencies:
         - name: epel
           repo: git
@@ -290,3 +290,27 @@ suites:
     verifier:
       inspec_tests:
         - path: test/integration/default
+  - name: sftp
+    provisioner:
+      pillars_from_directories:
+        - test/salt/pillar/default
+        - test/salt/pillar/sftp
+      dependencies:
+        - name: epel
+          repo: git
+          source: https://github.com/saltstack-formulas/epel-formula.git
+        - name: openssh
+          repo: git
+          source: https://github.com/saltstack-formulas/openssh-formula.git
+      state_top:
+        base:
+          'G@os:Amazon':
+            - epel
+          '*':
+            - proftpd._mapdata
+            - proftpd
+            - proftpd.sftp
+    verifier:
+      inspec_tests:
+        - path: test/integration/default
+        - path: test/integration/sftp
