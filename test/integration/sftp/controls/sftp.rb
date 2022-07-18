@@ -22,6 +22,7 @@ control 'SFTP configuration' do
     its('content') { should include 'SFTPAuthorizedUserKeys' }
     its('content') { should include 'Port 4000' }
     its('content') { should include 'SFTPCompression delayed' }
+    its('content') { should include 'SFTPHostKey /etc/ssh/ssh_host_rsa_key\nSFTPHostKey /etc/ssh/ssh_host_dsa_key' %}
   end
 
   describe file(spec_config_file) do
