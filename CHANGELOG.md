@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.1](https://github.com/saltstack-formulas/proftpd-formula/compare/v1.0.0...v1.0.1) (2022-08-30)
+
+
+### Code Refactoring
+
+* upgrade map.jinja to latest version ([fffc64e](https://github.com/saltstack-formulas/proftpd-formula/commit/fffc64e5a6faca0d195a959987196acef72df447))
+
+
+### Styles
+
+* uniformize template files headers ([911223c](https://github.com/saltstack-formulas/proftpd-formula/commit/911223ca01d290fd601f5599b1638d4eb0aec058))
+* use 2 spaces for YAML indentation ([c004efc](https://github.com/saltstack-formulas/proftpd-formula/commit/c004efc4e1f7775f373557430b35c950fc434340))
+
 # [1.0.0](https://github.com/saltstack-formulas/proftpd-formula/compare/v0.6.0...v1.0.0) (2022-07-18)
 
 

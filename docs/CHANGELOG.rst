@@ -2,6 +2,51 @@
 Changelog
 =========
 
+`1.0.1 <https://github.com/saltstack-formulas/proftpd-formula/compare/v1.0.0...v1.0.1>`_ (2022-08-30)
+---------------------------------------------------------------------------------------------------------
+
+Code Refactoring
+^^^^^^^^^^^^^^^^
+
+
+* upgrade map.jinja to latest version (\ `fffc64e <https://github.com/saltstack-formulas/proftpd-formula/commit/fffc64e5a6faca0d195a959987196acef72df447>`_\ )
+
+Styles
+^^^^^^
+
+
+* uniformize template files headers (\ `911223c <https://github.com/saltstack-formulas/proftpd-formula/commit/911223ca01d290fd601f5599b1638d4eb0aec058>`_\ )
+* use 2 spaces for YAML indentation (\ `c004efc <https://github.com/saltstack-formulas/proftpd-formula/commit/c004efc4e1f7775f373557430b35c950fc434340>`_\ )
+
+`1.0.0 <https://github.com/saltstack-formulas/proftpd-formula/compare/v0.6.0...v1.0.0>`_ (2022-07-18)
+---------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **contributing:** fix default dict to default list (\ `b84a1c7 <https://github.com/saltstack-formulas/proftpd-formula/commit/b84a1c74f25f713a3477612a541ede9e650845d8>`_\ )
+* **contributing:** not enabled or disable (\ `0862407 <https://github.com/saltstack-formulas/proftpd-formula/commit/08624075b8fdddd4a60a9b6bb2b0e6f38727e38c>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* update ``pre-commit`` configuration inc. for pre-commit.ci [skip ci] (\ `f4b9dfa <https://github.com/saltstack-formulas/proftpd-formula/commit/f4b9dfa9605cd26ffd239fe92a95830b79b891e1>`_\ )
+* **kitchen+gitlab:** update for new pre-salted images [skip ci] (\ `648f454 <https://github.com/saltstack-formulas/proftpd-formula/commit/648f454e640d1855347b6e20c49af57555a9a53b>`_\ )
+
+Tests
+^^^^^
+
+
+* **system.rb:** add support for ``mac_os_x`` [skip ci] (\ `b212e3c <https://github.com/saltstack-formulas/proftpd-formula/commit/b212e3c3c9f57ae13ba3ab84c7aaf89408ca2989>`_\ )
+
+BREAKING CHANGES
+^^^^^^^^^^^^^^^^
+
+
+* **contributing:** The module dictionary becomes a list
+
 `0.6.0 <https://github.com/saltstack-formulas/proftpd-formula/compare/v0.5.1...v0.6.0>`_ (2022-03-30)
 ---------------------------------------------------------------------------------------------------------
 
