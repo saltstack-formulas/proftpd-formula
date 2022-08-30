@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+#
+# Set default values.
+---
+values:
+  pkg: proftpd
+  config: /etc/proftpd/proftpd.conf
+  sql_config: /etc/proftpd/sql.conf
+  modules_config: /etc/proftpd/modules.conf
+  mysql: proftpd-mod-mysql
+  postgres: proftpd-mod-pgsql
+  service: proftpd
+...
